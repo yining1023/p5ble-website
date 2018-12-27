@@ -24,7 +24,7 @@ const siteConfig = {
   title: 'p5.ble.js', // Title for your website.
   tagline: 'A Javascript library that enables communication between BLE devices and p5 sketches.',
   url: 'https://yining1023.github.io', // Your website URL
-  baseUrl: '/p5ble-website/'
+  baseUrl: '/p5ble-website/',
   // For github.io type URLs, you would set the url and baseUrl like:
   //   url: 'https://facebook.github.io',
   //   baseUrl: '/test-site/',
