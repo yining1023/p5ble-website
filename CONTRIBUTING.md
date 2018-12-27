@@ -35,3 +35,8 @@ To build the website run this script from the `website/` directory:
 ```bash
 npm run build
 ```
+
+Publish:
+```
+yarn run publish-gh-pages
+```
