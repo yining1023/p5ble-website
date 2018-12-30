@@ -9,8 +9,7 @@
 <url> <loc>https://yining1023.github.io/p5ble-website/blog/2017/04/10/blog-post-two</loc> <changefreq>weekly</changefreq> <priority>0.3</priority> </url>
 <url> <loc>https://yining1023.github.io/p5ble-website/blog/2016/03/11/blog-post</loc> <changefreq>weekly</changefreq> <priority>0.3</priority> </url>
 <url> <loc>https://yining1023.github.io/p5ble-website/docs/api</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://yining1023.github.io/p5ble-website/docs/api" /> </url>
-<url> <loc>https://yining1023.github.io/p5ble-website/docs/example1</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://yining1023.github.io/p5ble-website/docs/example1" /> </url>
-<url> <loc>https://yining1023.github.io/p5ble-website/docs/doc4</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://yining1023.github.io/p5ble-website/docs/doc4" /> </url>
-<url> <loc>https://yining1023.github.io/p5ble-website/docs/doc5</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://yining1023.github.io/p5ble-website/docs/doc5" /> </url>
+<url> <loc>https://yining1023.github.io/p5ble-website/docs/quick-start</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://yining1023.github.io/p5ble-website/docs/quick-start" /> </url>
+<url> <loc>https://yining1023.github.io/p5ble-website/docs/read-one-char-callback</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://yining1023.github.io/p5ble-website/docs/read-one-char-callback" /> </url>
 <url> <loc>https://yining1023.github.io/p5ble-website/docs/getstarted</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://yining1023.github.io/p5ble-website/docs/getstarted" /> </url>
 </urlset>
