@@ -1,29 +1,129 @@
 ---
 id: getstarted
 title: Get Started
-sidebar_label: Example Page
+sidebar_label: Getting Started
 ---
 
-Check the [documentation](https://docusaurus.io) for how to use Docusaurus.
+p5.ble.js enables communication between your BLE devices and your p5 sketch. With p5.ble.js, you can request and connect to nearby Bluetooth devices, read/write Bluetooth characteristics, start/stop notifications.
 
-## Lorem
+The library is supported by code examples, tutorials that cover many popular Bluetooth LE devices.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus elementum massa eget nulla aliquet sagittis. Proin odio tortor, vulputate ut odio in, ultrices ultricies augue. Cras ornare ultrices lorem malesuada iaculis. Etiam sit amet libero tempor, pulvinar mauris sed, sollicitudin sapien.
+p5.ble.js is inspired by [p5.serialport](https://github.com/vanevery/p5.serialport), [p5.js](https://p5js.org/), [Web Bluetooth API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Bluetooth_API), and [Processing Serial Library](https://processing.org/reference/libraries/serial/index.html).
 
-## Mauris In Code
+## Usage
 
+Download the [minified](https://unpkg.com/p5ble@latest/dist/p5.ble.min.js), or use the online version and add it to the head section of your HTML document:
+
+```javascript
+<script src="p5.ble.min.js" type="text/javascript"></script>
 ```
-Mauris vestibulum ullamcorper nibh, ut semper purus pulvinar ut. Donec volutpat orci sit amet mauris malesuada, non pulvinar augue aliquam. Vestibulum ultricies at urna ut suscipit. Morbi iaculis, erat at imperdiet semper, ipsum nulla sodales erat, eget tincidunt justo dui quis justo. Pellentesque dictum bibendum diam at aliquet. Sed pulvinar, dolor quis finibus ornare, eros odio facilisis erat, eu rhoncus nunc dui sed ex. Nunc gravida dui massa, sed ornare arcu tincidunt sit amet. Maecenas efficitur sapien neque, a laoreet libero feugiat ut.
+or 
+```javascript
+<script src="https://unpkg.com/p5ble@latest/dist/p5.ble.min.js" type="text/javascript"></script>
 ```
 
-## Nulla
+```html
+<!DOCTYPE html>
+  <html>
+    <head>
+      <title>Getting Started with p5.ble.js</title>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/addons/p5.dom.min.js"></script>
+      <script src="https://unpkg.com/p5ble@latest/dist/p5.ble.min.js"></script>
+    </head>
 
-Nulla facilisi. Maecenas sodales nec purus eget posuere. Sed sapien quam, pretium a risus in, porttitor dapibus erat. Sed sit amet fringilla ipsum, eget iaculis augue. Integer sollicitudin tortor quis ultricies aliquam. Suspendisse fringilla nunc in tellus cursus, at placerat tellus scelerisque. Sed tempus elit a sollicitudin rhoncus. Nulla facilisi. Morbi nec dolor dolor. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras et aliquet lectus. Pellentesque sit amet eros nisi. Quisque ac sapien in sapien congue accumsan. Nullam in posuere ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin lacinia leo a nibh fringilla pharetra.
+    <body>
+      <script>
 
-## Orci
+        // Your code will go here
 
-Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin venenatis lectus dui, vel ultrices ante bibendum hendrerit. Aenean egestas feugiat dui id hendrerit. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur in tellus laoreet, eleifend nunc id, viverra leo. Proin vulputate non dolor vel vulputate. Curabitur pretium lobortis felis, sit amet finibus lorem suscipit ut. Sed non mollis risus. Duis sagittis, mi in euismod tincidunt, nunc mauris vestibulum urna, at euismod est elit quis erat. Phasellus accumsan vitae neque eu placerat. In elementum arcu nec tellus imperdiet, eget maximus nulla sodales. Curabitur eu sapien eget nisl sodales fermentum.
+      </script>
+    </body>
+  </html>
+```
 
-## Phasellus
+That's all!
 
-Phasellus pulvinar ex id commodo imperdiet. Praesent odio nibh, sollicitudin sit amet faucibus id, placerat at metus. Donec vitae eros vitae tortor hendrerit finibus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque vitae purus dolor. Duis suscipit ac nulla et finibus. Phasellus ac sem sed dui dictum gravida. Phasellus eleifend vestibulum facilisis. Integer pharetra nec enim vitae mattis. Duis auctor, lectus quis condimentum bibendum, nunc dolor aliquam massa, id bibendum orci velit quis magna. Ut volutpat nulla nunc, sed interdum magna condimentum non. Sed urna metus, scelerisque vitae consectetur a, feugiat quis magna. Donec dignissim ornare nisl, eget tempor risus malesuada quis.
+## Connect to a BLE device and read from one characteristic:
+
+Let's add something more to connect to a BLE device and read from one characteristic.
+
+```html
+<!DOCTYPE html>
+  <html>
+    <head>
+      <title>Getting Started with p5.ble.js</title>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/addons/p5.dom.min.js"></script>
+      <script src="https://unpkg.com/p5ble@latest/dist/p5.ble.min.js"></script>
+    </head>
+
+    <body>
+      <script>
+      const serviceUuid = "19b10010-e8f2-537e-4f6c-d104768a1214";
+      let myCharacteristic;
+      let myValue = 0;
+      let myBLE;
+
+      function setup() {
+        // Create a p5ble class
+        myBLE = new p5ble();
+
+        createCanvas(200, 200);
+        textSize(20);
+        textAlign(CENTER, CENTER);
+
+        // Create a 'Connect' button
+        const connectButton = createButton('Connect')
+        connectButton.mousePressed(connectToBle);
+      }
+
+      function connectToBle() {
+        // Connect to a device by passing the service UUID
+        myBLE.connect(serviceUuid, gotCharacteristics);
+      }
+
+      // A function that will be called once got characteristics
+      function gotCharacteristics(error, characteristics) {
+        if (error) console.log('error: ', error);
+        console.log('characteristics: ', characteristics);
+        myCharacteristic = characteristics[0];
+        // Read the value of the first characteristic
+        myBLE.read(myCharacteristic, gotValue);
+      }
+
+      // A function that will be called once got values
+      function gotValue(error, value) {
+        if (error) console.log('error: ', error);
+        console.log('value: ', value);
+        myValue = value;
+        // After getting a value, call p5ble.read() again to get the value again
+        myBLE.read(myCharacteristic, gotValue);
+      }
+
+      function draw() {
+        background(250);
+        text(myValue, 100, 100);
+      }
+      </script>
+    </body>
+  </html>
+```
+Get your BLE device ready. Make sure its service UUID matches the `serviceUuid` above. Read more about setup your BLE device here.
+
+Open it in a web browser and you should see something like this:
+<table><tr><td>
+<img src="assets/getstarted1.png" width="400px">
+</td></tr></table>
+
+Click connect to choose a BLE device to pair.
+<table><tr><td>
+<img src="assets/getstarted2.png" width="400px">
+</td></tr></table>
+
+Then you should be able to read the value!
+<table><tr><td>
+<img src="assets/getstarted3.png" width="400px">
+</td></tr></table>
+
+🌈

@@ -40,7 +40,7 @@ const siteConfig = {
   headerLinks: [
     {doc: 'getstarted', label: 'Get Started'},
     {doc: 'api', label: 'API'},
-    {doc: 'example1', label: 'Examples'},
+    {doc: 'quick-start', label: 'Examples'},
     {href: 'https://github.com/yining1023/p5.ble.js', label: 'Code'},
     {blog: true, label: 'Tutorials'},
   ],

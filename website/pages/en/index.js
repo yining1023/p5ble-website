@@ -64,8 +64,9 @@ class HomeSplash extends React.Component {
         <div className="inner">
           <ProjectTitle siteConfig={siteConfig} />
           <PromoSection>
-            <Button href={docUrl('getstarted.html')}>Try It Out</Button>
-            <Button href={docUrl('example1.html')}>Examples</Button>
+            <Button href={docUrl('getstarted.html')}>Get Started</Button>
+            <Button href={docUrl('api.html')}>APIs</Button>
+            <Button href={docUrl('quick-start.html')}>Examples</Button>
             <Button href='/blog'>Tutorials</Button>
           </PromoSection>
         </div>
@@ -162,11 +163,11 @@ class Index extends React.Component {
       <Block background="light">
         {[
           {
-            content: 'With p5.ble.js, you can request and connect to nearby Bluetooth devices, read/write Bluetooth characteristics, receive GATT Notifications, know if a Bluetooth device is connected.',
+            content: 'With p5.ble.js, you can - <br> - Request and connect to nearby Bluetooth devices, <br> - Read / write Bluetooth characteristics, <br> - Start / stop notifications.',
             title: 'Features',
           },
           {
-            content: 'The library is supported by code examples, tutorials that cover many popular Bluetooth LE devices. p5.ble.js is inspired by p5.serialport, p5.js, and Web Bluetooth API.',
+            content: 'The library is supported by code examples, tutorials that cover many popular Bluetooth LE devices. p5.ble.js by [p5.serialport](https://github.com/vanevery/p5.serialport), [p5.js](https://p5js.org/), [Web Bluetooth API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Bluetooth_API), and [Processing Serial Library](https://processing.org/reference/libraries/serial/index.html).',
             title: 'More',
           }
         ]}

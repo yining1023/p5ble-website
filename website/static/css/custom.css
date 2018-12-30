@@ -40,14 +40,13 @@ p.code {
 
 p.code.bold {
   font-weight: 800;
-  color: #a257ff;
+  color: #5885ff;
 }
 
 code {
   padding: 3px 8px;
-  background-color: #a257ff;
+  background-color: #cedafc;
   box-shadow: none;
-  color: white;
   border-radius: .3em;
   font-family: "SFMono-Regular",source-code-pro,Menlo,Monaco,Consolas,"Roboto Mono","Droid Sans Mono","Liberation Mono",Consolas,"Courier New",Courier,monospace;
   word-break: break-word;
@@ -89,5 +88,5 @@ p.code {
 }
 
 .codehl3 {
-  color: #a257ff;
+  color: #5885ff;
 }
