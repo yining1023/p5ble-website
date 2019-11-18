@@ -4,6 +4,8 @@ title: Read from one characteristic
 sidebar_label: Read from one Characteristic
 ---
 
+<h1 style="color:red">This website is NOT up-to-date, it has been moved to [https://itpnyu.github.io/p5ble-website](https://itpnyu.github.io/p5ble-website)</h1>
+
 ## Demo
 
 <div class="example">

@@ -4,6 +4,10 @@ title: Get Started
 sidebar_label: Getting Started
 ---
 
+<h1 style="color:red">This website is NOT up-to-date, it has been moved to 👇 [https://itpnyu.github.io/p5ble-website](https://itpnyu.github.io/p5ble-website)</h1>
+
+
+
 p5.ble.js enables communication between your BLE devices and your p5 sketch. With p5.ble.js, you can request and connect to nearby Bluetooth devices, read/write Bluetooth characteristics, start/stop notifications.
 
 The library is supported by code examples, tutorials that cover many popular Bluetooth LE devices.

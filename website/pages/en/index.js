@@ -36,10 +36,15 @@ class HomeSplash extends React.Component {
     // );
 
     const ProjectTitle = () => (
-      <h2 className="projectTitle">
-        {siteConfig.title}
-        <small>{siteConfig.tagline}</small>
-      </h2>
+      <div>
+        <h2 className="projectTitle">
+          {siteConfig.title}
+          <small>{siteConfig.tagline}</small>
+        </h2>
+        <h1 style={{color: 'red'}}>This website is NOT up-to-date, it has been moved to 👇 <br />
+          <a href="https://itpnyu.github.io/p5ble-website"> https://itpnyu.github.io/p5ble-website</a>.
+        </h1>
+      </div>
     );
 
     const PromoSection = props => (
@@ -63,12 +68,12 @@ class HomeSplash extends React.Component {
         {/* <Logo img_src={`${baseUrl}img/docusaurus.svg`} /> */}
         <div className="inner">
           <ProjectTitle siteConfig={siteConfig} />
-          <PromoSection>
+          {/*<PromoSection>
             <Button href={docUrl('getstarted.html')}>Get Started</Button>
             <Button href={docUrl('api.html')}>APIs</Button>
             <Button href={docUrl('quick-start.html')}>Examples</Button>
             <Button href={`${baseUrl}blog`}>Tutorials</Button>
-          </PromoSection>
+          </PromoSection>*/}
         </div>
       </SplashContainer>
     );
@@ -240,13 +245,13 @@ class Index extends React.Component {
     return (
       <div>
         <HomeSplash siteConfig={siteConfig} language={language} />
-        <div className="mainContainer">
-          <Description />
+        {/*<div className="mainContainer">*/}
+          {/*<Description />*/}
           {/* <TryOut /> */}
-          <Code />
-          <LearnHow />
+          {/*<Code />*/}
+          {/*<LearnHow />*/}
           {/* <Showcase /> */}
-        </div>
+        {/*</div>*/}
       </div>
     );
   }

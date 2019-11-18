@@ -2,6 +2,7 @@
 id: api
 title: APIs
 ---
+<h1 style="color:red">This website is NOT up-to-date, it has been moved to 👇 [https://itpnyu.github.io/p5ble-website](https://itpnyu.github.io/p5ble-website)</h1>
 
 # All APIs:
 1. Request and Connect to Bluetooth Devices
